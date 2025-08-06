@@ -7,17 +7,35 @@
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 
-  /* Background animation */
+  /* Background image + animated gradient overlay */
   body {
     margin: 0;
     padding: 2rem;
     font-family: 'Montserrat', sans-serif;
-    background: linear-gradient(135deg, #121815 0%, #1f2a1f 50%, #0d120d 100%);
+    background:
+      linear-gradient(135deg, #121815 0%, #1f2a1f 50%, #0d120d 100%),
+      url('BFBanner.png') no-repeat center center fixed;
+    background-size: cover, cover;
     color: #ccc;
     min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
+  }
+
+  /* Optional: extra dark overlay for readability */
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0; left: 0; width: 100vw; height: 100vh;
+    background: rgba(18, 24, 21, 0.65);
+    pointer-events: none;
+    z-index: 0;
+  }
+  .container, img.logo, h1, h2, p, .buttons, footer {
+    position: relative;
+    z-index: 1;
   }
 
   .container {
@@ -122,6 +140,3 @@
   </div>
 </body>
 </html>
-
-
-
